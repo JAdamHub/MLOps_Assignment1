@@ -1,0 +1,25 @@
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+
+exclude:
+  - .gitignore
+  - requirements.txt
+  - README.md
+  - prediction_history.json
+
+# Jekyll site settings
+baseurl: /
+url: https://jadamhub.github.io/ML-Ops_Assignment1
+
+# Enable GitHub Pages plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Set default empty layout
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
