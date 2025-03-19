@@ -1,26 +1,5 @@
-theme: jekyll-theme-minimal
-
-exclude:
-  - .gitignore
-  - requirements.txt
-  - README.md
-
-# Jekyll site settings
-baseurl: "/MLOps_Assignment1"
-url: "https://jadamhub.github.io"
-
-# Enable GitHub Pages plugins
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Set default empty layout
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-
-# Custom settings
-title: "Penguins of Madagascar - Species Classification"
-description: "Daily penguin species predictions and classification results"
+title: Penguins of Madagascar - Species Classification
+description: Daily penguin species predictions
+theme: jekyll-theme-cayman
+baseurl: ""
+url: ""
