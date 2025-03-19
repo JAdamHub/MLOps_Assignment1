@@ -10,7 +10,7 @@ exclude:
 
 # Jekyll site settings
 baseurl: /
-url: https://jadamhub.github.io/ML-Ops_Assignment1
+url: https://jadamhub.github.io/mlops_assignment1
 
 # Enable GitHub Pages plugins
 plugins:
