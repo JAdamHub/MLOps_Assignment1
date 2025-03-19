@@ -1,6 +1,4 @@
 theme: jekyll-theme-minimal
-plugins:
-  - jekyll-feed
 
 exclude:
   - .gitignore
@@ -9,8 +7,8 @@ exclude:
   - prediction_history.json
 
 # Jekyll site settings
-baseurl: /
-url: https://jadamhub.github.io/mlops_assignment1
+baseurl: "/mlops_assignment1"
+url: "https://jadamhub.github.io"
 
 # Enable GitHub Pages plugins
 plugins:
