@@ -1,0 +1,7 @@
+pandas
+numpy<2.0
+seaborn
+matplotlib
+scikit-learn
+joblib
+requests
