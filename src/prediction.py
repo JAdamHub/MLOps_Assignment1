@@ -132,24 +132,9 @@ def create_github_pages(history, docs_dir):
     html_content = f"""
     ---
     layout: default
+    title: Penguins of Madagascar - Species Classification
     ---
-    
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Penguins of Madagascar - Species Classification</title>
-        {% include head.html %}
-        <style>
-            body {{ padding: 20px; }}
-            .prediction-card {{ margin-bottom: 20px; }}
-            .adelie {{ background-color: #d4edda; }}
-            .other {{ background-color: #f8d7da; }}
-        </style>
-    </head>
-    <body>
-        <div class="container">
+    <div class="container">
             <h1 class="my-4">Penguins of Madagascar - Species Classification</h1>
             <p class="lead">Looking for Skipper, Private, Rico, and Kowalski (Adelie penguins) in New York!</p>
             
