@@ -1,14 +1,16 @@
+# Site settings
 title: Penguins of Madagascar - Species Classification
-description: Daily penguin species predictions
-theme: jekyll-theme-cayman
-baseurl: "/MLOps_Assignment1"
-url: "https://jadamhub.github.io"
+description: Daily penguin species prediction system
+baseurl: "/MLOps_Assignment1" # the subpath of your site
+url: "" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
 
-# Exclude files from processing
+# Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
