@@ -1,18 +1,71 @@
----
-layout: default
-title: Penguins of Madagascar - Species Classification
----
-<div class="container">
-  <h1 class="my-4">Penguins of Madagascar - Species Classification</h1>
-  <p class="lead">This page is automatically updated every day at 7:30 AM with new penguin predictions.</p>
-  
-  <div class="alert alert-info">
-    <p>Please wait for the first prediction. The page will be updated when the prediction.py script runs.</p>
-  </div>
-  
-  <footer class="mt-5 text-center text-muted">
-    <p>Penguin Classification System - MLOps Assignment</p>
-  </footer>
-</div>
 
-{% include scripts.html %}
+    ---
+    layout: default
+    title: Penguins of Madagascar - Species Classification
+    ---
+    <div class="container">
+            <h1 class="my-4">Penguins of Madagascar - Species Classification</h1>
+            <p class="lead">Looking for Skipper, Private, Rico, and Kowalski (Adelie penguins) in New York!</p>
+            
+            <h2 class="mt-4">Latest Prediction</h2>
+    
+            <div class="card prediction-card other">
+                <div class="card-body">
+                    <h5 class="card-title">Species: Chinstrap</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Confidence: 97.00%</h6>
+                    <p class="card-text">Timestamp: 2025-03-21 17:34:43</p>
+                    <div class="card-text">
+                        <strong>Features:</strong>
+                        <ul>
+                            <li>Bill Length: 51.26829157251165 mm</li>
+                            <li>Bill Depth: 19.067119646433515 mm</li>
+                            <li>Flipper Length: 194.8879720909085 mm</li>
+                            <li>Body Mass: 3355.194368399064 g</li>
+                        </ul>
+                    </div>
+                    <p class="card-text">
+                        <strong>Result: </strong>
+                        This is not one of our penguins.
+                    </p>
+                </div>
+            </div>
+        
+            <h2 class="mt-4">Prediction History</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Species</th>
+                            <th>Confidence</th>
+                            <th>Bill Length (mm)</th>
+                            <th>Bill Depth (mm)</th>
+                            <th>Flipper Length (mm)</th>
+                            <th>Body Mass (g)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <tr class="">
+                            <td>2025-03-21 17:34:43</td>
+                            <td>Chinstrap</td>
+                            <td>97.00%</td>
+                            <td>51.26829157251165</td>
+                            <td>19.067119646433515</td>
+                            <td>194.8879720909085</td>
+                            <td>3355.194368399064</td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+            
+            <footer class="mt-5 text-center text-muted">
+                <p>Penguin Classification System - MLOps Assignment</p>
+            </footer>
+        </div>
+        
+        {% include scripts.html %}
+    </body>
+    </html>
+    
