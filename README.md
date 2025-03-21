@@ -20,7 +20,33 @@ Every day at 7AM, new penguin data is available at the API endpoint. This projec
 ### Machine Learning Model
 - Classification model trained on historical penguin data
 - Features used: bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g
-- Model evaluation metrics included in the training notebook
+- Model can be trained using file 'model_training.py'
+
+Model Metrics:
+Feature Selection Results (SelectKBest with f_classif):
+             Feature       Score        P-value  Selected
+2  flipper_length_mm  567.406992  1.587418e-107      True
+0     bill_length_mm  397.299437   1.380984e-88      True
+1      bill_depth_mm  344.825082   1.446616e-81      True
+3        body_mass_g  341.894895   3.744505e-81     False
+
+Selected features: ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm']
+Model accuracy: 0.9900
+
+Classification Report:
+              precision    recall  f1-score   support
+
+      Adelie       0.98      1.00      0.99        48
+   Chinstrap       1.00      0.94      0.97        18
+      Gentoo       1.00      1.00      1.00        34
+
+    accuracy                           0.99       100
+   macro avg       0.99      0.98      0.99       100
+weighted avg       0.99      0.99      0.99       100
+
+
+Cross-validation scores: [0.98507463 1.         0.97014925 0.96969697 0.93939394]
+Mean CV score: 0.9729
 
 ### Automation
 - GitHub Actions workflow runs daily at 7:30 AM
@@ -30,7 +56,6 @@ Every day at 7AM, new penguin data is available at the API endpoint. This projec
 
 ### Deployment and Automation
 - GitHub Pages set up with custom Jekyll theme for result visualization
-- GitHub Actions workflow configured to run daily at 7:30 AM UTC
 - Workflow steps:
   - Check out repository code
   - Set up Python 3.10 environment
@@ -52,7 +77,7 @@ Every day at 7AM, new penguin data is available at the API endpoint. This projec
   - `prediction.py`: Script to fetch new data and make predictions
 - `.github/workflows/`: Contains GitHub Actions workflow definitions
 
-## How to Run Locally
+## Clone:
 
 1. Clone the repository
 ```bash
