@@ -32,6 +32,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add docs/
           git diff --quiet && git diff --staged --quiet || git commit -m "Update prediction data"
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
