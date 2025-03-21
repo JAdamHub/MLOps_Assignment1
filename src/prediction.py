@@ -129,17 +129,16 @@ def create_github_pages(history, docs_dir):
     Create or update the GitHub Pages files
     """
     # Create index.html with Jekyll front matter
-    html_content = f"""
-    ---
-    layout: default
-    title: Penguins of Madagascar - Species Classification
-    ---
-    <div class="container">
-            <h1 class="my-4">Penguins of Madagascar - Species Classification</h1>
-            <p class="lead">Looking for Skipper, Private, Rico, and Kowalski (Adelie penguins) in New York!</p>
-            
-            <h2 class="mt-4">Latest Prediction</h2>
-    """
+    html_content = """---
+layout: default
+title: Penguins of Madagascar - Species Classification
+---
+<div class="container">
+        <h1 class="my-4">Penguins of Madagascar - Species Classification</h1>
+        <p class="lead">Looking for Skipper, Private, Rico, and Kowalski (Adelie penguins) in New York!</p>
+        
+        <h2 class="mt-4">Latest Prediction</h2>
+"""
     
     if history['predictions']:
         latest = history['predictions'][-1]
@@ -210,11 +209,10 @@ def create_github_pages(history, docs_dir):
                 <p>Penguin Classification System - MLOps Assignment</p>
             </footer>
         </div>
-        
-        {% include scripts.html %}
-    </body>
-    </html>
-    """
+"""
+    
+    # Add the Jekyll include for scripts at the bottom
+    html_content += "\n{% include scripts.html %}"
     
     # Write the HTML content to the index.html file
     index_path = os.path.join(docs_dir, 'index.html')
