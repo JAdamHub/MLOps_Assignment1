@@ -22,31 +22,34 @@ Every day at 7AM, new penguin data is available at the API endpoint. This projec
 - Features used: bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g
 - Model can be trained using file 'model_training.py'
 
-Model Metrics:
-Feature Selection Results (SelectKBest with f_classif):
-             Feature       Score        P-value  Selected
-2  flipper_length_mm  567.406992  1.587418e-107      True
-0     bill_length_mm  397.299437   1.380984e-88      True
-1      bill_depth_mm  344.825082   1.446616e-81      True
-3        body_mass_g  341.894895   3.744505e-81     False
+### Model Metrics
 
-Selected features: ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm']
-Model accuracy: 0.9900
+#### Feature Selection Results (SelectKBest with f_classif):
 
-Classification Report:
-              precision    recall  f1-score   support
+| Feature              | Score        | P-value          | Selected |
+|----------------------|--------------|------------------|----------|
+| flipper_length_mm    | 567.406992   | 1.587418e-107    | True     |
+| bill_length_mm       | 397.299437   | 1.380984e-88     | True     |
+| bill_depth_mm        | 344.825082   | 1.446616e-81     | True     |
+| body_mass_g          | 341.894895   | 3.744505e-81     | False    |
 
-      Adelie       0.98      1.00      0.99        48
-   Chinstrap       1.00      0.94      0.97        18
-      Gentoo       1.00      1.00      1.00        34
+**Selected features**: `['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm']`  
+**Model accuracy**: `0.9900`
 
-    accuracy                           0.99       100
-   macro avg       0.99      0.98      0.99       100
-weighted avg       0.99      0.99      0.99       100
+#### Classification Report:
 
+| Class        | Precision | Recall | F1-score | Support |
+|--------------|-----------|--------|----------|---------|
+| Adelie       | 0.98      | 1.00   | 0.99     | 48      |
+| Chinstrap    | 1.00      | 0.94   | 0.97     | 18      |
+| Gentoo       | 1.00      | 1.00   | 1.00     | 34      |
 
-Cross-validation scores: [0.98507463 1.         0.97014925 0.96969697 0.93939394]
-Mean CV score: 0.9729
+|              | Accuracy  | Macro Avg | Weighted Avg |
+|--------------|-----------|-----------|---------------|
+|              | 0.99      | 0.99      | 0.99          |
+
+**Cross-validation scores**: `[0.98507463, 1.0, 0.97014925, 0.96969697, 0.93939394]`  
+**Mean CV score**: `0.9729`
 
 ### Automation
 - GitHub Actions workflow runs daily at 7:30 AM
