@@ -28,6 +28,21 @@ Every day at 7AM, new penguin data is available at the API endpoint. This projec
 - Makes predictions using the trained model
 - Updates the GitHub Pages with the latest prediction
 
+### Deployment and Automation
+- GitHub Pages set up with custom Jekyll theme for result visualization
+- GitHub Actions workflow configured to run daily at 7:30 AM UTC
+- Workflow steps:
+  - Check out repository code
+  - Set up Python 3.10 environment
+  - Install required dependencies from requirements.txt
+  - Execute prediction script
+  - Commit and push changes to the docs directory
+  - Authentication handled via GitHub token
+- **Important Repository Settings**:
+  - Workflow permissions must be set to 'Read and write permissions' in the repository settings
+  - Navigate to: Repository → Settings → Actions → General → Workflow permissions
+  - Select 'Read and write permissions' to allow the workflow to commit changes to the repository
+
 ## Repository Structure
 - `data/`: Contains the SQLite database
 - `models/`: Stores the trained machine learning model
