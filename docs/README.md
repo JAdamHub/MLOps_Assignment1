@@ -1,20 +1,20 @@
 # Penguins of Madagascar - GitHub Pages
 
-Denne mappe indeholder filerne til GitHub Pages-websitet for Penguins of Madagascar projektet.
+This folder contains the files for the GitHub Pages website for the Penguins of Madagascar project.
 
-## Struktur
+## Structure
 
-- `_config.yml`: Jekyll konfigurationsfil
-- `_layouts/`: Indeholder HTML layouts
-- `_includes/`: Indeholder genbrugelige HTML komponenter
-- `index.html`: Hovedsiden (genereres automatisk af prediction.py)
+- `_config.yml`: Jekyll configuration file
+- `_layouts/`: Contains HTML layouts
+- `_includes/`: Contains reusable HTML components
+- `index.html`: Main page (generated automatically by prediction.py)
 
-## Funktionalitet
+## Functionality
 
-GitHub Pages-websitet viser de daglige forudsigelser af pingvinarter, som hentes fra API'en hver morgen kl. 7:30 via GitHub Actions. Websitet opdateres automatisk, når nye forudsigelser tilføjes.
+The GitHub Pages website displays the daily predictions of penguin species, which are fetched from the API every morning at 7:30 AM via GitHub Actions. The website is updated automatically when new predictions are added.
 
-## Teknisk implementering
+## Technical Implementation
 
 - Jekyll static site generator
 - Bootstrap 4.6 for styling
-- GitHub Actions for automatisering
+- GitHub Actions for automation
