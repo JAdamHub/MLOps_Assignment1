@@ -84,5 +84,5 @@ Every day at 7AM, new penguin data is available at the API endpoint. This projec
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/penguins-classification.git
-cd penguins-classification
+git clone https://github.com/yourusername/penguins-classification.git](https://github.com/JAdamHub/MLOps_Assignment1.git
+cd MLOps_Assignment1
