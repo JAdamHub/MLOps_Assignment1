@@ -12,15 +12,66 @@ Every day at 7AM, new penguin data is available at the API endpoint. This projec
 
 ## Technical Implementation
 
-### Data Pipeline
-- Data is fetched from the original penguins dataset
-- Transformed and stored in a SQLite database
-- Features selected based on correlation analysis and domain knowledge
+### Data Preparation Process
+The `data_preparation.py` script handles the initial data pipeline, transforming the raw penguins dataset into a normalized SQLite database. The process..:
 
-### Machine Learning Model
-- Classification model trained on historical penguin data
-- Features used: bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g
-- Model can be trained using file 'model_training.py'
+1. **Data Download**
+   - Uses seaborn's built-in dataset loader to fetch the penguins dataset
+   - Removes any rows with missing values to ensure data quality
+   - Provides initial dataset statistics including shape and species distribution
+
+2. **Database Schema**
+   The data is organized into a normalized database structure with the following tables:
+   - `species`: Unique penguin species (Adelie, Chinstrap, Gentoo)
+   - `island`: Different islands where penguins were observed
+   - `sex`: Gender categories of the penguins
+   - Measurements: `bill_length_mm`,	`bill_depth_mm`,	`flipper_length_mm`,`body_mass_g`: Contains the physical measurements with foreign keys to other tables
+     - Links to species, islands, and sex tables
+     - Stores bill length, bill depth, flipper length, and body mass
+
+3. **Data Transformation**
+   - Creates unique identifiers for species, islands, and sex categories
+   - Establishes proper relationships between tables using foreign keys
+   - Ensures data integrity and efficient querying capabilities
+
+This structured database approach allows for:
+- Efficient data storage and retrieval
+- Maintaining data relationships
+- Easy integration with the machine learning pipeline
+
+### Model Training Process
+The `model_training.py` script implements a comprehensive machine learning pipeline for penguin species classification. Here's a detailed breakdown of the process:
+
+1. **Data Loading**
+   - Connects to the SQLite database to fetch penguin measurements
+   - Joins measurement data with species information
+   - Performs initial data validation and preprocessing
+
+2. **Feature Analysis & Selection**
+   - Generates correlation matrix to understand feature relationships
+   - Creates feature distribution plots by species
+   - Utilizes SelectKBest with f_classif for feature importance ranking
+   - Selects top 3 most discriminative features based on statistical significance
+   - Visualizes feature importance scores for transparency
+
+3. **Model Training Pipeline**
+   - Implements data splitting (70% training, 30% testing)
+   - Applies StandardScaler for feature normalization
+   - Trains a RandomForest classifier with 100 estimators
+   - Performs 5-fold cross-validation for robust performance estimation
+
+4. **Model Evaluation**
+   - Generates comprehensive classification metrics
+   - Creates confusion matrix visualization
+   - Calculates per-class precision, recall, and F1-scores
+   - Reports cross-validation scores for model stability assessment
+
+5. **Model Persistence**
+   - Saves the trained model for production use
+   - Stores the feature scaler for consistent preprocessing
+   - Preserves selected feature list for prediction pipeline
+
+The training process emphasizes both model performance and interpretability, ensuring reliable species classification while maintaining transparency in the feature selection process.
 
 ### Model Metrics
 
@@ -51,11 +102,54 @@ Every day at 7AM, new penguin data is available at the API endpoint. This projec
 **Cross-validation scores**: `[0.98507463, 1.0, 0.97014925, 0.96969697, 0.93939394]`  
 **Mean CV score**: `0.9729`
 
-### Automation
-- GitHub Actions workflow runs daily at 7:30 AM
-- Fetches new penguin data from the API
-- Makes predictions using the trained model
-- Updates the GitHub Pages with the latest prediction
+### Daily Prediction Pipeline (prediction.py)
+The `prediction.py` script orchestrates the daily penguin species prediction process with several key components:
+
+1. **Data Fetching (`fetch_new_penguin_data`)**
+   - Connects to the API endpoint (http://130.225.39.127:8000/new_penguin/)
+   - Handles HTTP requests and error management
+   - Returns structured penguin measurement data
+
+2. **Species Prediction (`predict_species`)**
+   - Loads the trained RandomForest model and feature scaler
+   - Uses selected features from training phase
+   - Processes new data through the same preprocessing pipeline
+   - Generates species prediction with confidence score
+   - Returns prediction results with timestamp
+
+3. **History Management (`update_prediction_history`)**
+   - Maintains a JSON file of all predictions
+   - Stores features, predictions, and confidence scores
+   - Enables tracking of prediction history
+
+4. **GitHub Pages Update (`create_github_pages`)**
+   - Generates dynamic HTML content
+   - Creates visually appealing prediction cards
+   - Highlights Adelie penguin predictions
+   - Maintains a searchable prediction history table
+   - Updates the website automatically
+
+### GitHub Actions Workflow (7.30am-daily_prediction.yml)
+The workflow file `.github/workflows/7.30am-daily_prediction.yml` automates the daily prediction process:
+
+1. **Scheduling**
+   - Runs automatically at 7:30 AM UTC daily
+   - Supports manual triggering via workflow_dispatch
+
+2. **Environment Setup**
+   - Uses Ubuntu latest runner
+   - Sets up Python 3.10
+   - Installs required dependencies
+
+3. **Execution Process**
+   - Runs the prediction script
+   - Handles potential errors gracefully
+
+4. **Repository Management**
+   - Configures Git user credentials
+   - Commits new prediction results
+   - Updates GitHub Pages content
+   - Uses GitHub token for authentication
 
 ### Deployment and Automation
 - GitHub Pages set up with custom Jekyll theme for result visualization
