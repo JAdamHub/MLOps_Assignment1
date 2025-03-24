@@ -169,8 +169,10 @@ The workflow file `.github/workflows/7.30am-daily_prediction.yml` automates the 
 - `.github/workflows/`: Contains GitHub Actions workflow definitions
 
 ## Clone:
-
-1. Clone the repository
+Clone the repository
 ```bash
 git clone https://github.com/JAdamHub/MLOps_Assignment1.git
 cd MLOps_Assignment1
+```
+
+
