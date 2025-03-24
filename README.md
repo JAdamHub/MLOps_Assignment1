@@ -106,7 +106,7 @@ The training process emphasizes both model performance and interpretability, ens
 The `prediction.py` script orchestrates the daily penguin species prediction process with several key components:
 
 1. **Data Fetching (`fetch_new_penguin_data`)**
-   - Connects to the API endpoint (http://130.225.39.127:8000/new_penguin/)
+   - Connects to the API endpoint
    - Handles HTTP requests and error management
    - Returns structured penguin measurement data
 
