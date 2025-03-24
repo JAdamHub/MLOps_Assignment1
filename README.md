@@ -139,7 +139,7 @@ The workflow file `.github/workflows/7.30am-daily_prediction.yml` automates the 
 2. **Environment Setup**
    - Uses Ubuntu latest runner
    - Sets up Python 3.10
-   - Installs required dependencies
+   - Installs required dependencies from requirements.txt
 
 3. **Execution Process**
    - Runs the prediction script
@@ -153,13 +153,6 @@ The workflow file `.github/workflows/7.30am-daily_prediction.yml` automates the 
 
 ### Deployment and Automation
 - GitHub Pages set up with custom Jekyll theme for result visualization
-- Workflow steps:
-  - Check out repository code
-  - Set up Python 3.10 environment
-  - Install required dependencies from requirements.txt
-  - Execute prediction script
-  - Commit and push changes to the docs directory
-  - Authentication handled via GitHub token
 - **Important Repository Settings**:
   - Workflow permissions must be set to 'Read and write permissions' in the repository settings
   - Navigate to: Repository → Settings → Actions → General → Workflow permissions
