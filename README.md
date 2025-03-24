@@ -151,9 +151,7 @@ The workflow file `.github/workflows/7.30am-daily_prediction.yml` automates the 
    - Updates GitHub Pages content
    - Uses GitHub token for authentication
 
-### Deployment and Automation
-- GitHub Pages set up with custom Jekyll theme for result visualization
-- **Important Repository Settings**:
+### **Important Repository Settings**:
   - Workflow permissions must be set to 'Read and write permissions' in the repository settings
   - Navigate to: Repository → Settings → Actions → General → Workflow permissions
   - Select 'Read and write permissions' to allow the workflow to commit changes to the repository
