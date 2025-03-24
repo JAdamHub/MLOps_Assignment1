@@ -2,6 +2,9 @@
 
 This repository contains a machine learning solution for classifying penguin species based on physical measurements. The project is specifically designed to identify Adelie penguins (like Skipper, Private, Rico, and Kowalski from the "Penguins of Madagascar") among other species.
 
+## GitHub Pages URL:
+https://jadamhub.github.io/MLOps_Assignment1/ 
+
 ## Project Overview
 
 Every day at 7AM, new penguin data is available at the API endpoint. This project:
