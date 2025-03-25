@@ -5,6 +5,32 @@ This repository contains a machine learning solution for classifying penguin spe
 ## GitHub Pages URL:
 https://jadamhub.github.io/MLOps_Assignment1/ 
 
+## Docker Deployment
+
+This project can be deployed using Docker. Follow these instructions to build and run the container:
+
+### Using Docker Directly
+
+```bash
+# Build the Docker image
+docker build -t penguin-classifier .
+
+# Run the container
+docker run -v "$(pwd)/docs:/app/docs" -v "$(pwd)/models:/app/models" -v "$(pwd)/data:/app/data" penguin-classifier
+```
+
+### Using Docker Compose
+
+```bash
+# Build and run with docker-compose
+docker-compose up --build
+
+# Run in detached mode
+docker-compose up -d
+```
+
+The Docker container will run the prediction script and update the GitHub Pages with the results. 
+
 ## Project Overview
 
 Every day at 7AM, new penguin data is available at the API endpoint. This project:

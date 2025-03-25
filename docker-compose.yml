@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  penguin-classifier:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./docs:/app/docs
+      - ./models:/app/models
+      - ./data:/app/data
+    restart: "no"

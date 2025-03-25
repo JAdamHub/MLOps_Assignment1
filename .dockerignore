@@ -1,0 +1,24 @@
+# Git related
+.git
+.gitignore
+.github/
+
+# Documentation
+docs/
+README.md
+Assignment.md
+
+# Development and environment files
+.DS_Store
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Images not needed for the application
+images/
+
+# Other unnecessary files
+Engineering/
