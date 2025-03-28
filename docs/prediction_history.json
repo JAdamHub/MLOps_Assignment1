@@ -95,6 +95,18 @@
         "body_mass_g": 4554.993173705314,
         "datetime": "2025-03-27T07:59:00+00:00"
       }
+    },
+    {
+      "species": "Adelie",
+      "confidence": 0.62,
+      "timestamp": "2025-03-28 07:33:45",
+      "features": {
+        "bill_length_mm": 39.35703563483552,
+        "bill_depth_mm": 16.811409132064792,
+        "flipper_length_mm": 220.61808061046793,
+        "body_mass_g": 3819.7255422628805,
+        "datetime": "2025-03-28T07:59:00+00:00"
+      }
     }
   ]
 }
