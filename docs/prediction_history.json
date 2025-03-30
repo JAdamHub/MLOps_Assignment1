@@ -119,6 +119,18 @@
         "body_mass_g": 3432.4280938078796,
         "datetime": "2025-03-29T07:59:00+00:00"
       }
+    },
+    {
+      "species": "Gentoo",
+      "confidence": 0.95,
+      "timestamp": "2025-03-30 07:32:28",
+      "features": {
+        "bill_length_mm": 43.159113044647164,
+        "bill_depth_mm": 14.663447136893936,
+        "flipper_length_mm": 210.8965154965039,
+        "body_mass_g": 3855.3786127040885,
+        "datetime": "2025-03-30T07:59:00+00:00"
+      }
     }
   ]
 }
